@@ -1,2 +1,19 @@
-Various
+Python and bash scripts that run when called by a chatplan or dialplan.
 
+alert.py: utility function that can be called by a shell script to call the appropriate number in response to a warning status.
+
+call_esl.py: utility function called by alert.py which sets up the freeswitch call origination.
+
+cron_backhaul_alert.sh: bash script (called as a cron job) to check internet connectivity via a call to the curl command; if curl fails, a text message is sent to the "alert numbers." Default crontab specifies a check every minute.
+
+cron_mem_alert.sh: bash script (called as a cron job) to check the amount of available memory and send a text message warning if it is less than 1 Mb. Default crontab checks every minute.
+
+vim cron_temp_alert.sh: bash script (called as a cron job) to check cpu temp and send a text message warning if it is over 70C. Default crontab checks every 5 minutes. 
+
+VBTS_Check_Backhaul(_27).py: Python script called by a chatplan when a text (containing any content) is sent to the backhaul check request phone number. In general, this number is assigned within the chatplan and is typically 3 digits. _27 version of the script is for Python 2.7.
+
+VBTS_Check_Mem(_27).py: Python script called by chatplan when a text is sent to the memory check request number.
+
+VBTS_Check_Temp(_27).py: Python script called by chatplan when a text is sent to the temperature check request number.
+
+VBTS_Enroll_Alert(_27).py: Python script called by chatplan when a text is sent to the enrollment number for alerts. 

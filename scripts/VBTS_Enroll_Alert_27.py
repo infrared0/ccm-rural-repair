@@ -10,9 +10,7 @@ from freeswitch import consoleLog
 import subprocess
 import os
 import json
-
 #import sys
-# TODO TEST THIS!
 
 #ENROLL_NUMBER = sys.argv[1]
 ENROLL_FILE_PATH = "/home/endaga/alert_recipients/alert_recipients.json"
