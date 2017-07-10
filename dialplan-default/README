@@ -1,0 +1,13 @@
+All dialplans are xml files.
+
+File names are prefixed with numbers to determine the sequence in which dialplans will be run upon receipt of a call (originated automatically from the basestation upon detection of an error).
+
+Total number range: 00 through 99
+
+Number range generically used for software sensors and alert enrollment: 04 through 09
+04: temp check
+05: backhaul check
+06: memory check
+07: unassigned
+08: unassigned
+09: unassigned
