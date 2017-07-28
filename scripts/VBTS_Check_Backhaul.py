@@ -10,7 +10,6 @@ from freeswitch import consoleLog
 import subprocess
 
 def python_curl():
-    #if test_url == "":
     url = "https://www.ccm.cs.washington.edu"
     result = subprocess.call(["curl", url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if result == 0:
@@ -35,5 +34,3 @@ def fsapi(session, stream, env, url):
 def handler(session, url):
     res = python_curl()
     session.execute("set", "_localstr=%s" % res)
-# not sure if there should be a separate handler
-# not sure if I should just write to stream for fsapi
