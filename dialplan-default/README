@@ -11,3 +11,8 @@ Number range generically used for software sensors and alert enrollment: 04 thro
 07: unassigned
 08: unassigned
 09: unassigned
+
+The dial numbers for now are hardcoded similarly to the chatplan numbers, but are designed to be used for automated alerts rather than user-facing, so there's no enrollment dialplan.
+400: temp alert
+500: backhaul alert
+600: memory alert

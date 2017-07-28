@@ -11,3 +11,9 @@ Number range generically used for software sensors and alert enrollment: 04 thro
 07: unassigned
 08: unassigned
 09: alert enrollment
+
+The request numbers for now are hardcoded as follows:
+400: temp check
+500: backhaul check
+600: memory check
+900: alert enrollment

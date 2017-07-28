@@ -9,7 +9,7 @@ of patent rights can be found in the PATENTS file in the same directory.
 
 <extension name="temp_alert">
   <condition field="${destination_number}" expression="^400$">
-    <action application="python" data='VBTS_Check_Temp_27'/>
+    <action application="python" data='VBTS_Check_Temp'/>
     <action application="set" data='res=${python(VBTS_Send_SMS ${vbts_callerid}|${destination_number}|${_localstr})}'/>
   </condition>
 </extension>
