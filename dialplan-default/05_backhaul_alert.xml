@@ -8,7 +8,7 @@ of patent rights can be found in the PATENTS file in the same directory.
 -->
 
 <extension name="backhaul_down_alert">
-  <condition field="${destination_number}" expression="^700$">
+  <condition field="${destination_number}" expression="^500$">
     <action application="python" data='VBTS_Check_Backhaul_27'/>
     <action application="set" data='res=${python(VBTS_Send_SMS ${vbts_callerid}|${destination_number}|${_localstr})}'/>
   </condition>

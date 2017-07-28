@@ -10,10 +10,14 @@ cron_mem_alert.sh: bash script (called as a cron job) to check the amount of ava
 
 vim cron_temp_alert.sh: bash script (called as a cron job) to check cpu temp and send a text message warning if it is over 70C. Default crontab checks every 5 minutes. 
 
-VBTS_Check_Backhaul(_27).py: Python script called by a chatplan when a text (containing any content) is sent to the backhaul check request phone number. In general, this number is assigned within the chatplan and is typically 3 digits. _27 version of the script is for Python 2.7.
+VBTS_Check_Temp(_27).py: Python script called by chatplan when a text is sent to the temperature check request number. In general, this number is assigned within the chatplan and is typically 3 digits. _27 version of the script is for Python 2.7.
+Currently the request number is hardcoded to 400.
+
+VBTS_Check_Backhaul(_27).py: Python script called by a chatplan when a text (containing any content) is sent to the backhaul check request phone number. 
+Currently the request number is hardcoded to 500.
 
 VBTS_Check_Mem(_27).py: Python script called by chatplan when a text is sent to the memory check request number.
-
-VBTS_Check_Temp(_27).py: Python script called by chatplan when a text is sent to the temperature check request number.
+Currently the request number is hardcoded to 600.
 
 VBTS_Enroll_Alert(_27).py: Python script called by chatplan when a text is sent to the enrollment number for alerts. 
+Currently the enrollment number is hardcoded to 900.
