@@ -6,6 +6,7 @@ touch $checkfile
 
 alertnumber=700;
 arduinoport=/dev/ttyACM0;
+lowvoltage=11;
 
 prev_volt=$(cat $checkfile);
 
@@ -14,18 +15,18 @@ volt=$(cat $checkfile);
 
 if [ -z "$prev_volt" ]
 then
-	echo checkfile created;
-	echo 12 > $checkfile;
-elif (( $(echo "$volt <= 11" | bc -l) )) && (( $(echo "$prev_volt > 11" | bc -l) ))
+    echo checkfile created;
+    echo 12 > $checkfile;
+elif (( $(echo "$volt <= $lowvoltage" | bc -l) )) && (( $(echo "$prev_volt > $lowvoltage" | bc -l) ))
 then
     echo Low voltage alert run;
-	python /usr/share/freeswitch/scripts/alert.py "$alertnumber";
-	echo $volt > $checkfile;
-elif (( $(echo "$volt >= 11" | bc -l) )) && (( $(echo "$prev_volt <= 11" | bc -l) ))
+    python /usr/share/freeswitch/scripts/alert.py "$alertnumber";
+    echo $volt > $checkfile;
+elif (( $(echo "$volt >= $lowvoltage" | bc -l) )) && (( $(echo "$prev_volt <= $lowvoltage" | bc -l) ))
 then
     echo Voltage ok alert run;
-	python /usr/share/freeswitch/scripts/alert.py "$alertnumber";
-	echo $volt > $checkfile;
+    python /usr/share/freeswitch/scripts/alert.py "$alertnumber";
+    echo $volt > $checkfile;
 else
-	echo same state;
+    echo same state;
 fi

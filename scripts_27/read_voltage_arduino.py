@@ -4,7 +4,6 @@ import sys
 SERIAL_PORT = sys.argv[1]
 
 ardSerial = serial.Serial(SERIAL_PORT, 9600)
-low_voltage = 11
 
 prevVoltage = 0
 steadyCount = 0
@@ -12,7 +11,8 @@ totalCount = 0
 
 while True:
     totalCount += 1
-    readVoltage = ardSerial.readline() 
+    rawVoltage = ardSerial.readline() 
+    readVoltage = rawVoltage.strip()
     voltage = float(readVoltage)
     if voltage == prevVoltage:
         steadyCount += 1
@@ -24,6 +24,6 @@ while True:
         break
     else:
         prevVoltage = voltage
-         
-if finalVoltage <= 11:
-    print finalVoltage 
+
+ardSerial.close()
+print finalVoltage
