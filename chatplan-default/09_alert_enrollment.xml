@@ -9,6 +9,8 @@ of patent rights can be found in the PATENTS file in the same directory.
 
 <extension name="alert-enrollment">
   <condition field="${vbts_tp_dest_address}" expression="^900$">
+    <action application="system" data='echo ${vbts_rp_originator_address} >> /home/endaga/alert_statuses/enroll_sms.txt'/>
+    <action application="system" data='echo ${vbts_text} >> /home/endaga/alert_statuses/enroll_sms.txt'/>
     <action application="python" data="VBTS_Enroll_Alert ${vbts_callerid}"/>
     <action application="python" data="VBTS_Send_SMS ${vbts_callerid}|${vbts_tp_dest_address}|${_localstr}"/>
     <action application="system" data='curl --data "from_number=${vbts_callerid}&from_name=${from_imsi}&service_type=${service_type}&destination=${vbts_tp_dest_address}" http://127.0.0.1/smscdr'/>
