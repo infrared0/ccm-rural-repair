@@ -18,10 +18,10 @@ def python_get_mem():
     integer_memory_kb = int(memory_available_kb)
 
     if integer_memory_kb <= low_memory_kb:
-        warning_status = "BABALA: MABABA NA ANG MEMORY NG SYSTEM. %s Mb na lamang ang natitira sa memory ng BTS computer. Magbura ng ilang di mahalagang bagay upang magkaron ng sapat na memory ang system." % (low_memory_kb/1000)
+        warning_status = "LOW MEMORY WARNING: less than %s Mb available. Please free up some space." % (low_memory_kb/1000)
     else:
-        warning_status = "BTS computer memory OK."
-    return "%s %s Kb memory." % (warning_status, integer_memory_kb)
+        warning_status = "Memory ok." 
+    return "%s %s Mb of memory available on the basestation." % (warning_status, integer_memory_kb/1000)
 
 def chat(message, placeholder):
     res = python_get_mem() 
@@ -40,3 +40,5 @@ def fsapi(session, stream, env, placeholder):
 def handler(session, placeholder):
     res = python_get_mem()
     session.execute("set", "_localstr=%s" % res)
+# not sure if there should be a separate handler
+# not sure if I should just write to stream for fsapi

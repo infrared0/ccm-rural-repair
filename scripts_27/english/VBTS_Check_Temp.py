@@ -17,10 +17,11 @@ def python_get_temp():
     # removed decimal numbers for readability
     #decimal_temp = int(raw_temp[2:])
     if integer_temp >= warning_temp:
-        warning_status = "BABALA: Mataas ang temperatura ng sistema. Maaari itong mamatay ano mang oras."
+        warning_status = "WARNING: temperature very high. Basestation may shut down soon."
     else:
-        warning_status = "Temperatura OK."
-    return "%s Ang temperatura ng BTS computer ay %s degrees C." % (warning_status, integer_temp)
+        warning_status = "Temperature ok."
+    #return "Basestation CPU temperature is %s.%s degrees C. %s" % (integer_temp, decimal_temp, warning_status)
+    return "Basestation CPU temperature is %s degrees C. %s" % (integer_temp, warning_status)
 
 def chat(message, placeholder):
     res = python_get_temp() 
