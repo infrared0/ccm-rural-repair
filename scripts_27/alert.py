@@ -14,4 +14,4 @@ def python_alert(ALERT_DIAL_NUMBER):
             call_esl.python_originate(recipient, ALERT_DIAL_NUMBER)
     return "alerts run"
 
-print python_alert(ALERT_DIAL_NUMBER)
+python_alert(ALERT_DIAL_NUMBER)
