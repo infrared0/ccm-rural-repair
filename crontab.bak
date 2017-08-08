@@ -23,4 +23,4 @@
 */5 * * * * /usr/share/freeswitch/scripts/cron_temp_alert.sh
 * * * * * /usr/share/freeswitch/scripts/cron_mem_alert.sh
 * * * * * /usr/share/freeswitch/scripts/cron_backhaul_alert.sh
-
+*/5 * * * * /usr/share/freeswitch/scripts/cron_volt_alert.sh

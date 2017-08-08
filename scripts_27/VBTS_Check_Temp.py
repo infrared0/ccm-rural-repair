@@ -8,19 +8,20 @@
 from freeswitch import consoleLog
 
 import subprocess
-import os
 
 def python_get_temp():
     warning_temp = 70
     temp_loc = "/sys/class/thermal/thermal_zone0/temp"
     raw_temp = subprocess.check_output(["cat", temp_loc]).strip()
     integer_temp = int(raw_temp[:2])
-    decimal_temp = raw_temp[2:]
+    # removed decimal numbers for readability
+    #decimal_temp = int(raw_temp[2:])
     if integer_temp >= warning_temp:
-        warning_status = "WARNING: temperature very high. Basestation may shut down."
+        warning_status = "WARNING: temperature very high. Basestation may shut down soon."
     else:
-        warning_status = "Temperature ok." 
-    return "Basestation CPU temperature is %s.%s degrees C. %s" % (integer_temp, decimal_temp, warning_status)
+        warning_status = "Temperature ok."
+    #return "Basestation CPU temperature is %s.%s degrees C. %s" % (integer_temp, decimal_temp, warning_status)
+    return "Basestation CPU temperature is %s degrees C. %s" % (integer_temp, warning_status)
 
 def chat(message, placeholder):
     res = python_get_temp() 
@@ -39,5 +40,4 @@ def fsapi(session, stream, env, placeholder):
 def handler(session, placeholder):
     res = python_get_temp()
     session.execute("set", "_localstr=%s" % res)
-# not sure if there should be a separate handler
-# not sure if I should just write to stream for fsapi
+
