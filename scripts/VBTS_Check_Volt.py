@@ -20,7 +20,8 @@ def python_get_volt():
 
     while True:
         totalCount += 1
-        readVoltage = ardSerial.readline()
+        rawVoltage = ardSerial.readline()
+        readVoltage = rawVoltage.strip()
         voltage = float(readVoltage)
         if voltage == prevVoltage:
             steadyCount += 1
