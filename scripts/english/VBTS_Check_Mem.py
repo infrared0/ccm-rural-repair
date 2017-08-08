@@ -9,27 +9,27 @@ from freeswitch import consoleLog
 
 import subprocess
 
-def python_get_temp():
-    warning_temp = 70
-    temp_loc = "/sys/class/thermal/thermal_zone0/temp"
-    raw_temp = subprocess.check_output(["cat", temp_loc]).strip()
-    integer_temp = int(raw_temp[:2])
-    # removed decimal numbers for readability
-    #decimal_temp = int(raw_temp[2:])
-    if integer_temp >= warning_temp:
-        warning_status = "BABALA: Mataas ang temperatura ng sistema. Maaari itong mamatay ano mang oras."
+def python_get_mem():
+    memory_loc = "/proc/meminfo"
+    low_memory_kb = 1000 #1000 kb of memory left
+    raw_out = subprocess.check_output(["cat", memory_loc]).split()
+    memory_available_kb = raw_out[7]
+    integer_memory_kb = int(memory_available_kb)
+
+    if integer_memory_kb <= low_memory_kb:
+        warning_status = "LOW MEMORY WARNING: less than %s Mb available. Please free up some space." % (low_memory_kb/1000)
     else:
-        warning_status = "Temperatura OK."
-    return "%s Ang temperatura ng BTS computer ay %s degrees C." % (warning_status, integer_temp)
+        warning_status = "Memory ok." 
+    return "%s %s Mb of memory available on the basestation." % (warning_status, integer_memory_kb/1000)
 
 def chat(message, placeholder):
-    res = python_get_temp() 
-    temp_loc = "/sys/class/thermal/thermal_zone0/temp"
-    consoleLog('info', "Checking CPU temp at %s: %s" % (temp_loc, res))
+    res = python_get_mem() 
+    memory_loc = "/proc/meminfo"
+    consoleLog('info', "Checking available mem: %s" % res)
     message.chat_execute('set', '_localstr=%s' % res)
 
 def fsapi(session, stream, env, placeholder):
-    res = python_get_temp()
+    res = python_get_mem()
     if isinstance(session, str):
         # we're in the FS CLI, so no session object
         consoleLog('info', "No session; otherwise would set _localstr=%s" % res)
@@ -37,6 +37,5 @@ def fsapi(session, stream, env, placeholder):
         session.execute("set", "_localstr=%s" % res)
 
 def handler(session, placeholder):
-    res = python_get_temp()
+    res = python_get_mem()
     session.execute("set", "_localstr=%s" % res)
-

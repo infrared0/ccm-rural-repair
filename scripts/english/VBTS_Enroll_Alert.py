@@ -21,9 +21,9 @@ def python_enroll(enroll_number):
         recipients[enroll_number] = 0
         with open(ENROLL_FILE_PATH, 'w') as f:
             json.dump(recipients, f)
-        return "Mabuhay! Ito ang cell tower alert service. I-text ang CHECK at ipadala sa 400 upang malaman ang temperatura ng sistema, sa 500 upang malaman kung konektado ito sa internet, sa 600 upang malaman ang computer memory, o sa 700 upang malaman ang boltahe ng baterya. Kayo rin ay makatatanggap ng mensaheng pang- abiso sa inyong cellphone."
-    else:
         return "Number %s enrolled." % enroll_number
+    else:
+        return "Number %s already enrolled to receive alerts." % enroll_number
 
 def chat(message, number):
     res = python_enroll(number) 

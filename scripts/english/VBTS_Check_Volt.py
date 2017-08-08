@@ -35,10 +35,10 @@ def python_get_volt():
             prevVoltage = voltage
 
     if finalVoltage <= low_voltage:
-        warning_status = "BABALA: MABABA ANG BOLTAHE. Ang boltahe ng baterya ay mababa. Ito ay %s volts na lamang. I-charge ang baterya upang mapigilang mamatay ang buong sistema matapos ang ilang oras." % finalVoltage
+        warning_status = "WARNING low voltage."
     else:
-        warning_status = "Boltahe OK: %s V." % finalVoltage
-    return warning_status
+        warning_status = "Voltage level ok." 
+    return "%s BTS battery voltage is %s." % (warning_status, finalVoltage)
 
 def chat(message, placeholder):
     res = python_get_volt() 

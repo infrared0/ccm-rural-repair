@@ -13,9 +13,10 @@ def python_curl():
     url = "https://www.ccm.cs.washington.edu"
     result = subprocess.call(["curl", url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     if result == 0:
-        return "Konektado sa internet."
+        return "Internet connected."
     else:
-        return "BABALA: HINDI KONEKTADO SA INTERNET. Hindi makatatawag o makapagpadala ng text sa ibang networks sa labas ng komunidad. Tignan ang koneksyong ng BTS."
+        return "Check internet connection- may be down."
+
 def chat(message, url):
     res = python_curl() 
     url = "https://www.ccm.cs.washington.edu"
