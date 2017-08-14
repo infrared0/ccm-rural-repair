@@ -1,0 +1,2 @@
+This is another version of python-esl that is being used currently on the nuc with fairwaves box setup.
+TODO: check if we are using osmocom or openbts and then if osmocom, check the oml remote IP.
