@@ -37,5 +37,3 @@ def fsapi(session, stream, env, url):
 def handler(session, url):
     res = python_curl()
     session.execute("set", "_localstr=%s" % res)
-# not sure if there should be a separate handler
-# not sure if I should just write to stream for fsapi

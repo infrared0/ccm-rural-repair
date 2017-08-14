@@ -6,33 +6,35 @@
 # of patent rights can be found in the PATENTS file in the same directory.
 
 from freeswitch import consoleLog
+from read_voltage_arduino import read_voltage_arduino
 
 import subprocess
 import serial
 
-ardSerial = serial.Serial("/dev/ttyACM0", 9600)
-low_voltage = 11
+serial_port = "/dev/ttyACM0"
+low_voltage = 9
 
 def python_get_volt():
-    prevVoltage = 0
-    steadyCount = 0
-    totalCount = 0 
-
-    while True:
-        totalCount += 1
-        rawVoltage = ardSerial.readline()
-        readVoltage = rawVoltage.strip()
-        voltage = float(readVoltage)
-        if voltage == prevVoltage:
-            steadyCount += 1
-        if steadyCount >= 4:
-            finalVoltage = voltage
-            break
-        elif totalCount >= 30:
-            finalVoltage = voltage
-            break
-        else:
-            prevVoltage = voltage
+#    prevVoltage = 0
+#    steadyCount = 0
+#    totalCount = 0 
+#
+#    while True:
+#        totalCount += 1
+#        rawVoltage = ardSerial.readline()
+#        readVoltage = rawVoltage.strip()
+#        voltage = float(readVoltage)
+#        if voltage == prevVoltage:
+#            steadyCount += 1
+#        if steadyCount >= 4:
+#            finalVoltage = voltage
+#            break
+#        elif totalCount >= 30:
+#            finalVoltage = voltage
+#            break
+#        else:
+#            prevVoltage = voltage
+    finalVoltage = read_voltage_arduino(serial_port)
 
     if finalVoltage <= low_voltage:
         warning_status = "BABALA: MABABA ANG BOLTAHE. Ang boltahe ng baterya ay mababa. Ito ay %s volts na lamang. I-charge ang baterya upang mapigilang mamatay ang buong sistema matapos ang ilang oras." % finalVoltage
