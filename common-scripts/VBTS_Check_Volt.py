@@ -37,7 +37,7 @@ def python_get_volt():
     finalVoltage = read_voltage_arduino(serial_port)
 
     if finalVoltage <= low_voltage:
-        warning_status = "BABALA: MABABA ANG BOLTAHE. Ang boltahe ng baterya ay mababa. Ito ay %s volts na lamang. I-charge ang baterya upang mapigilang mamatay ang buong sistema matapos ang ilang oras." % finalVoltage
+        warning_status = "BABALA: MABABANG BOLTAHE. Ang boltahe ng baterya ay %s V na lang. I-charge ang baterya upang mapigilang mamatay ang buong sistema matapos ang ilang oras." % finalVoltage
     else:
         warning_status = "Boltahe OK: %s V." % finalVoltage
     return warning_status

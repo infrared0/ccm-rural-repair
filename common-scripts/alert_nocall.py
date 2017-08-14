@@ -1,7 +1,6 @@
 # python script to trigger warning text by calling a dialplan
 
 import sys
-import call_esl
 import json
 from os import system
 

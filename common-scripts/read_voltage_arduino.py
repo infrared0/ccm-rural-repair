@@ -45,6 +45,7 @@ if __name__ == '__main__':
     SERIAL_PORT = sys.argv[1]
     WRITE_FILE = sys.argv[2]
     result = read_voltage_arduino(SERIAL_PORT)
+#    print result
 
     with open(WRITE_FILE, 'r+') as f:
         f.write(str(result))
