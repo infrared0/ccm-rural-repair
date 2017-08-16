@@ -12,28 +12,9 @@ import subprocess
 import serial
 
 serial_port = "/dev/ttyACM0"
-low_voltage = 9
+low_voltage = 11
 
 def python_get_volt():
-#    prevVoltage = 0
-#    steadyCount = 0
-#    totalCount = 0 
-#
-#    while True:
-#        totalCount += 1
-#        rawVoltage = ardSerial.readline()
-#        readVoltage = rawVoltage.strip()
-#        voltage = float(readVoltage)
-#        if voltage == prevVoltage:
-#            steadyCount += 1
-#        if steadyCount >= 4:
-#            finalVoltage = voltage
-#            break
-#        elif totalCount >= 30:
-#            finalVoltage = voltage
-#            break
-#        else:
-#            prevVoltage = voltage
     finalVoltage = read_voltage_arduino(serial_port)
 
     if finalVoltage <= low_voltage:

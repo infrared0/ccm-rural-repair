@@ -3,12 +3,17 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/pytho
 
 #config
 alertnumber=400;
-alertscript=/usr/share/freeswitch/scripts/alert_nocall.py;
-hightemp=70000;
+alertscript=/usr/share/freeswitch/scripts/alert.py;
+alertgroup=639360101920;
+hightemp=70;
 
-temp=$(</sys/class/thermal/thermal_zone0/temp)
-warning=$[$temp>=$hightemp]
+temp=$(</sys/class/thermal/thermal_zone0/temp);
+ctemp=$(echo "$temp/1000" | bc)
+warning=$[$ctemp>=$hightemp];
+
+warningmsg="BABALA: Mataas ang temperatura ng sistema. Maaari itong mamatay ano mang oras. Ang temperatura ng BTS computer ay $ctemp degrees C.";
+
 if (($warning))
 then
-    python "$alertscript" "$alertnumber" "BABALA: Mataas ang temperatura ng sistema. Maaari itong mamatay ano mang oras. Ang temperatura ng BTS computer ay $temp degrees C."
+    python "$alertscript" "$alertnumber" "$alertgroup" "$warningmsg";
 fi

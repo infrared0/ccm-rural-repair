@@ -16,12 +16,14 @@ def python_get_mem():
     raw_out = subprocess.check_output(["cat", memory_loc]).split()
     memory_available_kb = raw_out[7]
     integer_memory_kb = int(memory_available_kb)
+    integer_memory_kb = 923
+    memory_available_mb = integer_memory_kb/1000.0
 
     if integer_memory_kb <= low_memory_kb:
-        warning_status = "BABALA: MABABA NA ANG MEMORY NG SYSTEM. %s Mb na lamang ang natitira sa memory ng BTS computer. Magbura ng ilang di mahalagang bagay upang magkaron ng sapat na memory ang system." % (low_memory_kb/1000)
+        warning_status = "BABALA: MABABA MEMORY NG BTS COMPUTER. Magbura ng ilang di mahalagang bagay upang magkaron ng sapat na memory."
     else:
         warning_status = "BTS computer memory OK."
-    return "%s %s Kb memory." % (warning_status, integer_memory_kb)
+    return "%s %s Mb memory." % (warning_status, memory_available_mb)
 
 def chat(message, placeholder):
     res = python_get_mem() 
