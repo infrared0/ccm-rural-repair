@@ -1,10 +1,12 @@
 #!/bin/bash
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/python
 
+echo Running mem alert
+
 #config
 alertnumber=600;
 alertscript=/usr/share/freeswitch/scripts/alert.py;
-alertgroup=639360101920;
+alertgroup=$1;
 lowmemory=2000; # in kb
 
 memloc="/proc/meminfo"

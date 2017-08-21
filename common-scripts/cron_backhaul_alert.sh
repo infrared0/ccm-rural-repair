@@ -4,10 +4,12 @@ checkfile="/home/endaga/alert_statuses/internet_status.txt"
 touch $checkfile
 #checkfile must exist or script won't run. If it doesn't exist, will run next time.
 
+echo Running backhaul alert
+
 #config
 alertnumber=500;
 alertscript=/usr/share/freeswitch/scripts/alert.py;
-alertgroup=639360101920;
+alertgroup=$1;
 
 curl ccm.cs.washington.edu > /dev/null 2>&1;
 disconnected=$?;

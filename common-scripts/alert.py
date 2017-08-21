@@ -4,10 +4,6 @@ import sys
 import json
 from os import system
 
-ALERT_NUMBER = sys.argv[1]
-ALERT_GROUP = sys.argv[2]
-MSG = sys.argv[3]
-
 def python_alert(ALERT_NUMBER, ALERT_GROUP, MSG):
     '''
     Usage: python alert.py ALERT_NUMBER ALERT_GROUP "MESSAGE"
@@ -37,4 +33,9 @@ def python_alert(ALERT_NUMBER, ALERT_GROUP, MSG):
 
     return "alerts run"
 
-python_alert(ALERT_NUMBER, ALERT_GROUP, MSG)
+if __name__ == '__main__':
+    ALERT_NUMBER = sys.argv[1]
+    ALERT_GROUP = sys.argv[2]
+    MSG = sys.argv[3]
+
+    python_alert(ALERT_NUMBER, ALERT_GROUP, MSG)

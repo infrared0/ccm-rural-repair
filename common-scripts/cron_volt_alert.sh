@@ -4,12 +4,14 @@ checkfile=/home/endaga/alert_statuses/voltage.txt;
 touch $checkfile
 #checkfile must exist or script won't run. 
 
+echo Running volt alert
+
 #config
 alertnumber=700;
 arduinoport=/dev/ttyACM0;
 arduinoscript=/usr/share/freeswitch/scripts/read_voltage_arduino.py;
 alertscript=/usr/share/freeswitch/scripts/alert.py;
-alertgroup=639360101920;
+alertgroup=$1;
 
 lowvoltage=11;
 
