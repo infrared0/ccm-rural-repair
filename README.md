@@ -9,6 +9,3 @@ Dialplan xml files under folder dialplan-default go in /etc/freeswitch/dialplan/
 Folders under the folder state-files should go as-is in the home directory (i.e. /home/endaga)
 Write permissions on files that were copied from state-files to home directory should be modified via chmod 666 FILENAME
 File crontab.bak should be copy pasted into the root crontab file (via sudo crontab -e)
-hi there
-test
-
