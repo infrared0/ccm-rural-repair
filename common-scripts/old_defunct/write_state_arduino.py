@@ -1,11 +1,14 @@
 import serial
 import sys
 import subprocess
+import time
 
 def write_state_arduino(SERIAL_PORT, status):
     ardSerial = serial.Serial(SERIAL_PORT, 9600)
-    ardSerial.write(status + ";")
-    ardSerial.close()
+    tosend = status + ";"
+    ardSerial.write(tosend)
+#    time.sleep(7)
+#    ardSerial.close()
 
 def get_backhaul_status():
     cmd = "curl ccm.cs.washington.edu"
