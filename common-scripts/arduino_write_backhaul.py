@@ -21,13 +21,33 @@ def get_backhaul_status():
     return backhaul_status
 
 if __name__ == '__main__':
-    SERIAL_PORT = sys.argv[1]
-    ardSerial = serial.Serial(SERIAL_PORT, 9600)
-    while True:
-        state = get_backhaul_status()
-        #print state
-        write_state_arduino(ardSerial, state)
-        time.sleep(10)
-    ardSerial.close()
 
+    backhaul_file = sys.argv[2]
+    SERIAL_PORT = sys.argv[1]
+    serial_open = False
+
+    while True:
+        if not serial_open:
+            try:
+                ardSerial = serial.Serial(SERIAL_PORT, 9600)
+                serial_open = True
+                print "Serial opened"
+            except serial.serialutil.SerialException:
+                print "Serial failed to open"
+                time.sleep(30)
+        else:
+            try:
+                state = get_backhaul_status()
+
+                print state
+                with open(backhaul_file, "r+") as f:
+                    f.write(state + "\n") 
+
+                write_state_arduino(ardSerial, state)
+                time.sleep(10)
+            except serial.serialutil.SerialException:
+                ardSerial.close()
+                serial_open = False
+                print "Serial closed"
+                time.sleep(30)
 

@@ -1,0 +1,12 @@
+[Unit]
+Description=Job that starts control of arduino
+
+[Service]
+Type=simple
+EnvironmentFile=/path-to-this-repo/environment/env_arduino
+ExecStartPre=/usr/bin/pip install pyserial
+ExecStartPre=/usr/bin/touch ${backhaul_state_file} 
+ExecStart=/usr/bin/python ${backhaul_alert_script} ${serial_port} ${backhaul_state_file}
+
+[Install]
+WantedBy=multi-user.target
