@@ -79,10 +79,13 @@ if __name__ == '__main__':
         else:
             try:
                 backhaul_state = get_backhaul_status() + backhaul_code
+                #backhaul_state = "1" + backhaul_code
                 print backhaul_state
                 memory_state = get_memory_status() + memory_code
+                #memory_state = "1" + memory_code
                 print memory_state
                 temperature_state = get_temp_status() + temperature_code
+                #temperature_state = "1" + temperature_code
                 print temperature_state
 
                 with open(backhaul_file, "r+") as f:
