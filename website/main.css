@@ -138,8 +138,8 @@ a { text-decoration: none; }
 /* ==========================================================================
    My own things
    ========================================================================== */
-#wrapper 
-{ 
+#wrapper
+{
     width: 760px;
     margin: 0 auto;
 }
@@ -150,10 +150,12 @@ a { text-decoration: none; }
     display: flex;
     justify-content: space-between;
     font-family: 'Open Sans', sans-serif;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 #active-nav
-{ 
+{
     color: #265C83;
     text-decoration: underline;
 }
@@ -162,4 +164,28 @@ a { text-decoration: none; }
 {
     margin: 0;
     width: 100%;
+}
+
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.3em; }
+
+.card-holder
+{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+.person-card { }
+
+.person-card img
+{ 
+    margin-left: 0;
+    width: 200px;
+    float: left;
+}
+
+.person-card a
+{
+    font-weight: bold;
 }

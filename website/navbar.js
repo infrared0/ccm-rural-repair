@@ -1,6 +1,6 @@
 window.init = function() {
     var navElems = [ { name: 'Home', url: '/index.html' },
-                     { name: 'People & Places', url: '/people.html' },
+                     { name: 'People & Places', url: '/people-places.html' },
                      { name: 'Background', url: '/background.html' },
                      { name: 'Mozilla Challenge', url: '/mozilla.html' } ];
     for(var i in navElems) {
@@ -9,7 +9,7 @@ window.init = function() {
         if(url.indexOf(e.url) >= 0) {
             $('#nav').append('<div id="active-nav">' + e.name + '</div>');
         } else {
-            $('#nav').append('<a href="' + e.url + '">' + e.name + '</a>');
+            $('#nav').append('<a href="./' + e.url + '">' + e.name + '</a>');
         }
     }
 }
