@@ -1,6 +1,6 @@
 window.init = function() {
     var navElems = [ { name: 'Home', url: '/index.html' },
-                     { name: 'People & Places', url: '/people-places.html' },
+                     { name: 'People', url: '/people.html' },
                      { name: 'Background', url: '/background.html' },
                      { name: 'Mozilla Challenge', url: '/mozilla.html' } ];
     for(var i in navElems) {
