@@ -59,12 +59,6 @@ Look at picture 13 on the back of the solar panels for the solar panel wiring gu
 
 ****** Main components section ******
 
-"bts"
-The BTS is a high-powered radio that is able to communicate with every cell phone that is close enough to the tower to receive signal, around 1 km in all directions.  
-The BTS brand in Diotorin is NuRan.
-It can serve around 10 simultaneous calls and 90 text messages per minute.
-It has an indicator light on the bottom showing its status.
-
 "ant"
 The BTS antenna is responsible for broadcasting the signal to the entire coverage area.
 It broadcasts equally in all directions.
@@ -79,12 +73,52 @@ It is very thick and well insulated to increase signal quality.
 It should be bent as little as possible to avoid internal damage.
 The cable connections to the BTS and the antenna should be waterproofed with electrical tape to avoid water damage.
 
+---
+
+"bts"
+The BTS is a high-powered radio that is able to communicate with every cell phone that is close enough to the tower to receive signal, around 1 km in all directions.  
+The BTS brand in Diotorin is NuRan.
+It can serve around 10 simultaneous calls and 90 text messages per minute.
+It has an indicator light on the bottom showing its status.
+
+"ps"
+
+"dbc"
+
+"bnc"
+
+---
+
 "rou"
 
-"sat"
+"wan"
 
-"com"
+---
+
+"vsat"
+
+"txrx"
+
+"dish"
+
+---
+
+"comp"
+
+"cnc"
+
+---
+
+"ext"
+
+"inv"
+
+"tim"
 
 "sol"
+
+"scc"
+
+"bat"
 
 
