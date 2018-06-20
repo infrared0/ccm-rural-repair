@@ -1,8 +1,8 @@
 window.init = function() {
-    var navElems = [ { name: 'Home', url: '/index.html' },
-                     { name: 'People', url: '/people.html' },
-                     { name: 'Background', url: '/background.html' },
-                     { name: 'Mozilla Challenge', url: '/mozilla.html' } ];
+    var navElems = [ { name: 'Home', url: 'index.html' },
+                     { name: 'People', url: 'people.html' },
+                     { name: 'Background', url: 'background.html' },
+                     { name: 'Mozilla Challenge', url: 'mozilla.html' } ];
     for(var i in navElems) {
         var e = navElems[i];
         var url = window.location.href;
