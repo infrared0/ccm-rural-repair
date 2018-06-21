@@ -179,7 +179,7 @@ h2 { font-size: 1.3em; }
 .person-card { }
 
 .person-card img
-{ 
+{
     margin-left: 0;
     width: 200px;
     float: left;
@@ -191,3 +191,39 @@ h2 { font-size: 1.3em; }
 }
 
 .smalltext { font-size: .8em; }
+
+.captioned
+{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: .8em;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.captioned img
+{
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.floatright
+{
+    display: inline-block;
+    width: 50%;
+    float: right;
+}
+
+.floatright img
+{
+    padding-left: 20px;
+}
+
+.floatright p
+{
+    padding-left: 20px;
+}
+
