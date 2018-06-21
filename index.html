@@ -23,15 +23,83 @@
             <h1>Repairable Community Cellular Networks</h1>
 
             <img alt='Cagey' style='float: right; margin-right: 0' src='http://www.placecage.com/200/300'>
+	    <h2>About the Project</h2>
             <p>
-            Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+The Repairable Community Networks Project is an effort to improve the long-term sustainability of community cellular networks (CCNs) in the rural Philippines, in conjunction with the PCARI Village Basestation (VBTS) project at the University of the Philippines. 
+	    </p>
+	    <p>
+We aim to extend the core functionality of community cellular infrastructure with sensors, electronic manuals, and help interfaces to support local community members in cell site maintenance and repair. 
+	    </p>
+	    <p>
+Picture: phone with text to 500
+Caption: A currently deployed SMS utility that allows local maintenance personnel to check the status of the cell site backhaul link using their mobile phones.
+	    </p>
+	    <p>
+Our system provides automated error detection, SMS push notifications for errors, and an SMS-accessible manual. We include a public-facing notification board and diagram to aid in fault diagnosis and support community learning of how their infrastructure works. Components are sourced from the Philippines, as locally to the rural sites as possible.
+	    </p>
+	    <p>
+Picture: diagram/prototype
+Caption: The prototype
+	    </p>
+	    <p>
+The Community Cellular Manager (CCM) software stack which we are using for our basestations and network management is open source, as is all additional repair tool software implemented on top of it and all sensor and microcontroller firmware we have written. The project is hosted in a public github repository at https://github.com/infrared0/ccm-rural-repair.
             </p>
-            <p>
-            Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
-            </p>
-            <p>
-            Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
-            </p>
+
+	    <h2>Our Deployment Communities</h2>
+	    <p> 
+We have conducted 25 interviews in three of our seven VBTS sites to learn about local repair infrastructure and technical knowledge. In the towns of Dikapinisan, Dibut, and Diotorin, we have found that very basic electrical repairs are occasionally done for common household appliances, but generally broken appliances are discarded or taken to the nearest large town of Baler for repair. All three sites are only reachable via a 3-hour boat trip which becomes dangerous during monsoon season. In Dikapinisan the computers in the local high school have been broken for at least 6 months.
+	    </p>
+	    <p>
+Picture: stack of broken TVs in Dibut
+Caption: A stack of broken CRT television parts in a Dibut tool shed
+	    </p>
+	    <p>
+Residents of these areas usually lack the training and skills expected of a cell site engineer. Typically students attend only elementary school, and those who want to attend high school must board in either Dikapinisan or Baler. Very few technical jobs are available in these mainly agricultural communities, and people with some technical training are limited in their repair activities by lack of access to tools and spare parts. 
+	    </p>
+	    <p>
+Implications for the maintenance of the cell site are that it could take a day or more for an engineer to arrive from Baler or Manila. While installations in these disaster-prone areas are made as resilient as possible, they are also more likely to need repair. Our solution would allow basic repairs and precautionary measures to be locally sourced in a timely fashion, decreasing the likelihood and duration of service interruptions. 
+	    </p>
+	    <p>
+Picture: Amang
+Caption: A local repair expert who showed us his tools and complained about the difficulty of getting more tools and replacement parts from faraway urban centers to perform repair.
+	    </p>
+	    <p>
+We have also conducted repair training sessions where we stage problems with the cell site and ask maintenance officers to solve them, to receive in-context feedback on their understanding as well as to solicit design suggestions on what manuals and resources would be most helpful. We hope the teaching tools we create will provide exposure to technical concepts in an immediately useful, appropriate, and accessible way, stimulating interest in engineering among students and helping people take ownership of their network.
+	    </p>
+	    <p>
+Picture: Mock up exercise in Dibut
+Caption: A staged problem-solving exercise with a maintenance officer
+	    </p>
+
+	    <h2>Design Goals for the Project</h2>
+	    <p>
+1. To maximize productive community engagement with the cell site after deployment. 
+	    </p>
+	    <p>
+The deployment team has been working with these communities for more than 2 years, and our user-centered design methodology is rooted in community engagement. We hope our design will be useful outside of Aurora, but at present it is being designed specifically in and for these 7 sites.
+	    </p>
+	    <p>
+The concept of redesigning cellular network technology to enable local actors in remote and developing regions to maintain and repair it is novel. We improve physical visibility of the equipment state for non-engineers and non-computer or smartphone users via SMS and other locally available technologies. We envision troubleshooting or maintaining the cellular basestation to be similar to an accessible commodity appliance rarely needing specialized maintenance, like a home router. 
+	    </p>
+	    <p>
+Many interviewees in our study, even those without any technical training, expressed that they would want to know more about the state of their cell tower, for example whether anything needs maintenance and what impact that has on the service. This knowledge will enable people to make decisions about how to manage their usage and try to coordinate repair. Active, public status displays will allow people to participate more in the upkeep of their infrastructure, improving participation and valuation through care. 
+	    </p>
+	    <p>
+2. To help build local capacity by providing a medium for engineering education accessible by anyone with a basic phone. 
+	    </p>
+	    <p>
+Our system provides free SMS-based access to learning materials and walk-through debugging tutorials for the cell tower designed not just as technical manuals but deliberate teaching tools.
+	    </p>
+	    <p>
+3. To minimize costs and source materials locally.
+	    </p>
+	    <p>
+CCN installations typically cost USD 10-20K including all equipment and installation costs. This project adds modifications to an existing CCN for about USD 200 per CCN for microcontrollers, electronic components, mechanical parts, and weatherproofing and mounting materials, with an additional USD 100 for a possible smartphone interface device (which we have plans to add in a future prototype for access to richer media for repair support). We have reduced the cost from our initial estimate via the redesigns described above and our success in sourcing parts from Manila. For example, for the notification board we use 12V light bulbs popularly used throughout the Philippines to modify cars, especially informal buses called jeepneys. 
+	    </p>
+	    <p>
+Our project should make maintenance of existing CCNs more affordable by reducing the need for expert engineers to come from urban centers for faults that can be fixed locally. Our focus on common components with reliable supply chains also supports scalability within the Philippines. We are currently looking into sourcing parts from Baler or other towns closer to our rural sites.
+	    </p>
+
         </div>
     </body>
 </html>
