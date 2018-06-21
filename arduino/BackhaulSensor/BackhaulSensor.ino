@@ -1,28 +1,49 @@
 /*
-CCN backhaul sensor, serial in from python script
+Voltage sensor, serial out to be read by python script
  */
+const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
+//const int analogOutPin = 9; // Analog output pin that the LED is attached to
 
+float analogValue = 0;        // value read from the pot
+//int outputValue = 0;        // value output to the PWM (analog out)
+float rawVoltage = 0;
+float newVoltage = 0;             // start out assuming battery is full
+float prevVoltage = 12;
+float avgVoltage = 0;
+
+/*
+Software sensors, via serial in from python script
+ */
 // sensors
 int backhaulOn = 0;
 int backhaulLight = 13;
-int backhaulSound = 8;
+int backhaulSound = 12;
 int backhaulFreq = 440;
 char backhaulCode = 'b';
 boolean received_b = false;
 
+int signalOn = 0;
+int signalLight = 4;
+int signalSound = 3;
+int signalFreq = 494;
+char signalCode = 's';
+boolean received_s = false;
+
 int memoryOn = 0;
-int memoryLight = 12;
-int memorySound = 7;
+int memoryLight = 10;
+//int memorySound = 10;
 int memoryFreq = 494;
 char memoryCode = 'm';
 boolean received_m = false;
 
 int temperatureOn = 0;
-int temperatureLight = 8;
-int temperatureSound = 6;
+int temperatureLight = 9;
+//int temperatureSound = 6;
 int temperatureFreq = 523;
 char temperatureCode = 't';
 boolean received_t = false;
+
+// insert 2 more problems here
 
 int soundLength = 500;
 
@@ -82,6 +103,16 @@ void loop() {
     }
     received_t = false;
   }
+  // read the analog in voltage value:
+  analogValue = analogRead(analogInPin);
+  rawVoltage = analogValue*5/1023;                 // arduino A0 is 0-5 V
+  newVoltage = rawVoltage*11;                      // voltage divider divides by 11
+  avgVoltage = 0.5*prevVoltage + 0.5*newVoltage;
+  Serial.println(avgVoltage, 1);
+  prevVoltage = avgVoltage;
+
+  // wait 1 second before the next loop- is this too much?
+  delay(1000);
 }
 
 void serialEvent() {

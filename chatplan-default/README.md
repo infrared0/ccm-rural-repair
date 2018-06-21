@@ -17,3 +17,4 @@ The request numbers for now are hardcoded as follows:
 500: backhaul check
 600: memory check
 900: alert enrollment
+777: component information

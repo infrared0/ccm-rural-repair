@@ -66,6 +66,8 @@ if __name__ == '__main__':
     backhaul_file = sys.argv[2]
     memory_code = "m"
     temperature_code = "t"
+    ping_code = "p"
+    vswr_code = "v"
 
     while True:
         if not serial_open:
