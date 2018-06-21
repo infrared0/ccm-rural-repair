@@ -54,11 +54,30 @@ If any of these are not true, text 12 to 777 for specific help.
 
 "13"
 Look at picture 13 on the back of the solar panels for the solar panel wiring guide.
-The positive terminal of the  
+*placeholder*
+
+
+****** Main components section ******
 
 "bts"
+The BTS is a high-powered radio that is able to communicate with every cell phone that is close enough to the tower to receive signal, around 1 km in all directions.  
+The BTS brand in Diotorin is NuRan.
+It can serve around 10 simultaneous calls and 90 text messages per minute.
+It has an indicator light on the bottom showing its status.
 
 "ant"
+The BTS antenna is responsible for broadcasting the signal to the entire coverage area.
+It broadcasts equally in all directions.
+To maximize coverage, the antenna should be aligned vertically. 
+Without an antenna, there may still be signal near the BTS but it will be weak.
+The NuRan BTS uses two antennas.
+
+"coax"
+The antenna cable connects the BTS to the antenna.
+This type of cable is called "coaxial" cable.
+It is very thick and well insulated to increase signal quality.
+It should be bent as little as possible to avoid internal damage.
+The cable connections to the BTS and the antenna should be waterproofed with electrical tape to avoid water damage.
 
 "rou"
 
@@ -67,3 +86,5 @@ The positive terminal of the
 "com"
 
 "sol"
+
+

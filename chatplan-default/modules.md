@@ -1,4 +1,4 @@
-**cardboard with polaroid photos with problem codes?? display in tree format?
+cardboard/wooden panel with polaroid photos with problem codes?? display in tree format?
 
 001 text "info" to 777
 (text a component number or word to a number to get the list of predicted problems per component and how to diagnose, each has a code)
