@@ -229,11 +229,12 @@ h2 { font-size: 1.3em; }
 }
 
 /* ==========================================================================
-   Quick fixes
+   Quick fixes?
    ========================================================================== */
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+.prototype
+{
+    display: inline-block;
+    width: 75%;
+    float: left;
 }
