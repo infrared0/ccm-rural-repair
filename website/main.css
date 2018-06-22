@@ -74,6 +74,7 @@ img
 {
     vertical-align: middle;
     margin: 20px;
+    image-orientation: from-image;
 }
 
 /*
