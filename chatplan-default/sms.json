@@ -16,7 +16,7 @@
 "wan":
 "The WAN cable is the ethernet cable that connects the computer to the VSAT, which provides the computer with a satellite link to networks outside Diotorin. WAN stands for 'Wide Area Network' where the 'wide area' includes outside of Diotorin.",
 "vsat":
-"The VSAT transmits and receives signals from outside of Diotorin. It is connected to the satellite dish outside, which is the antenna for the VSAT. VSAT stands for 'Very Small Aperture Terminal.'",
+"The VSAT transmits and receives signals from outside of Diotorin. It is connected to the satellite dish outside, which is the antenna for the VSAT. VSAT stands for 'Very Small Aperture Terminal. The VSAT in Diotorin is the Evolution X3 Satellite Router made by iDirect.'",
 "txrx":
 "The satellite dish cables transmit and receive signals from the satellite dish. 'TX' stands for transmit, and 'RX' stands for receive.",
 "dish":
