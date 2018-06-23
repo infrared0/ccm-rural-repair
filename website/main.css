@@ -234,7 +234,13 @@ h2 { font-size: 1.3em; }
 
 .prototype
 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: .8em;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     display: inline-block;
-    width: 75%;
-    float: left;
+    width: 100%;
 }
