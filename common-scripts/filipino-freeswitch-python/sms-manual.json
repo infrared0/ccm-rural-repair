@@ -29,5 +29,33 @@
 "b00": "I-check kung naaarawan ang Solar Panel. Maaraw at wala bang nakakaharang dito? I-text ang b000 kung oo at b111 kung hindi.", 
 "b11":"Ayusin ang koneksyon o tumawag ng tulong mula sa Level 2 at 3. I-text ang b000 kung naayos na.",
 "b000": "I-off lang muna ang system hanggang umabot ang boltahe ng baterya hanggang 11V.",
-"b111": "Siguraduhing walang nakaharang sa Solar Panel o maghintay na umaraw. I-text ang b000 kung naayos na." 
+"b111": "Siguraduhing walang nakaharang sa Solar Panel o maghintay na umaraw. I-text ang b000 kung naayos na.",
+"prob comp":
+"Umiinit masyado ang computer. I-kumpirma kung mainit ang computer. I-text ang c1 kung mainit at c0 kung hindi.",
+"c1":
+"Kung mainit, i-OFF ang inverter. Palamigin ang computer. Kapag malamig na, i-ON muli ang inverter. I-text ang c11 kung naulit ang problema at c00 kung hindi.",
+"c0":
+"I-report agad sa 333.",
+"c11":
+"I-report agad sa 333. Siguraduhing nahahanginan ang computer, buksan ang pinto o maglagay ng electric fan pansamantala.",
+"c00":
+"Naisaayos mo na ang problemang ito. Salamat.",
+"prob vsat":
+"Hindi makatawag sa labas ng sitio. I-check kung hindi makatawag sa labas ng sitio. I-text ang v1 kung hindi makatawag sa labas ng sitio at v0 kung nakatatawag.", 
+"v1":
+"Kung naka-OFF, i-ON ang modem sa pamamagitan ng pagtanggal-kabit ng kable sa saksakan. I-text ang v0 kung ang modem ay hindi nag-ON at v10 kung nag-ON.",
+"v0":
+"I-report agad sa 333.",
+"V10":
+"Kumpirmahin ulit kung makakatawag sa labas ng sitio. I-text ang v00 kung nakakatawag na at v11 kung hindi pa.",
+"v11":
+"Tignan ang lagay ng panahon. Kung maulap, hintaying umaraw. Maaaring humina ang signal kung maulap. I-text ang v12 kung naulit ang problema at v00 kung hindi.",
+"v12":
+"I-check kung naka-ON ang maliliit na ilaw sa modem. Kung hindi naka-ilaw, baka may problema mula sa provider, maghintay lang. Kung naka-ilaw, maghintay sa loob ng isang araw at subukan muling tumawag. I-text ang v13 kung naulit ang problema at v00 kung hindi.",
+"v13":
+"Tingnan kung maluwag ang ethernet cable na kumukonekta sa modem at router. Ayusin ang mga kable. I-text ang v14 kung naulit ang problema at v00 kung hindi.",
+"v14":
+"Tingnan kung may mapansing sira sa ethernet cables. Kung wala, i-check ito gamit ang cable tester. Kung sira ang kable, i-report sa 333.",
+"v00":
+"Naisaayos mo na ang problemang ito. Salamat."
 }
