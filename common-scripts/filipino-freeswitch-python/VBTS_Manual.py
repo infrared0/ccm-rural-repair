@@ -18,16 +18,14 @@ def man_lookup(code):
         if lookup in man_dict: 
             entry = man_dict[lookup]
         else:
-            entry = "Maling keyword."
-        return str(entry)
+            entry = ["Basahin muli ang pinapagawa sa text. Siguraduhing nakopya ng maayos ang salitang dapat itext sa 777. Para naman sa larawan sa tarpaulin, itext ang CODE sa 777."]
+        return entry
 
 def chat(message, args):
     code = args
     entry = man_lookup(code) 
-    
-    last_ix_msg = int(round(len(entry)/160))
-    for i in range(last_ix_msg + 1):
-        value = entry[i*160 : min((i + 1)*160, len(entry))] 
+    for i in range(len(entry)):
+        value = str(entry[i])
         varname = 'manmsg_' + str(i)
         consoleLog('info', "Return Chat: " + varname + "=" + value + "\n")
         message.chat_execute('set', '%s=%s' % (varname, value))

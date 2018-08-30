@@ -1,0 +1,61 @@
+{"tow": "12 meters ang taas. Hinati-hati sa apat na bahagi upang madaling madala, mabuo at matanggal. Nilagyan ng guy wires upang mas tumatag.",
+"ant": "Ikinakalat ang signal ng network sa mga subscribers sa loob ng sitio. Ang mga signal mula sa base station ay ginagawang radio waves ng GSM antenna at kabaligtaran naman kapag tatanggap ito. Ang nasasakupan ng mga GSM antenna ay sa lahat ng direksyon. Lingguhan na inspeksyon at paglilinis: Tignan kung nawala sa ayos ang alin man sa mga antenna. I-off ang system kung kailangan ayusin. Tignan ang kabitan ng kable at antenna. Palitan ang electric tape sealing kung kailangan.",
+"coax": "Mahabang coaxial kableng nagdudugtong ng BTS sa antenna. I-text ang ‘cab’ sa 777 para sa mga tagubilin para i-check ang mga kable.",
+"bts": "Ito ay gumagana na parang isang malaking radyo. Nakatetext at nakatatawag tayo sa loob ng isang network sa pamamagitan ng kagamitan na ito.",
+"ps": "Kableng magdudugtong ng BTS sa Power Strip (ext). Para sa BTS, ginagawa nitong 24V DC power ang AC power mula sa inverter.",
+"lan1": "Ethernet kableng nagdudugtong ng BTS sa router.",
+"rou": "Ang nagkukunekta ng BTS sa ibang bahagi ng system gaya ng VSAT link at computer.",
+"wan": "Ang kable sa WAN ang nagkukunekta ng computer at VSAT link. Ang WAN ay 'Wide Area Network' kung saan ang 'wide area' ay sumasakop ng ibang mga network.",
+"vsat": "Ang Very Small Aperture Terminal (VSAT) ay isang sistemang pang-komunikasyon ng mga satellite. Ito ay binubuo ng VSAT modem na kumukonekta sa kompyuter upang magkaroon ng pagsasalin ng impormasyon gamit ang mga satellite na pang-komunikasyon.",
+"txrx": "Ang mga kableng ito ay nagpapadala (TX) at tumatanggap (RX) ng mga signal mula sa satellite dish",
+"dish": "Ang nag-uugnay ng mga cellphone sa loob ng VBTS network papunta sa mga tradisyonal na network (Globe, Smart atbp). Panlabas na kagamitan: Tagapagdala at tagakolekta ng mga signal ng satellite. Panloob na kagamitan: Kumukonekta sa kompyuter upang magkaroon ng pagsasalin ng impormasyon gamit ang mga satellite. Mahalaga kung saan nakatutok ang dish para makatanggap ng mas magandang signal mula sa satellite.",
+"comp": "Isang maliit na kompyuter na may karagdagang software na upang patakbuhin ang base station. Ang bahaging ito ay kailangan upang ganap na gumana ang NuRAN BTS.",
+"lan2": "Ethernet kableng nagdudugtong ng computer sa router.",
+"ext": "Dito isinasaksak ang lahat ng iba pang mga equipment na nangangailangan ng kuryente",
+"inv": "Inihahanda ang kuryente galing sa solar upang magamit ito ng mga AC components. Lingguhan  na inspeksyon at paglilinis: Gumamit ng basahan upang linisan ang ibabaw ng inverter. Tignan ang ilaw ng Inverter. Ito ay dapat berde. Kung pula, maaaring may sira.",
+"tim": "Isang switch na nagko-control ng pagpasok ng kuryente sa mga DC components. Kung may sakuna at kinakailangang i -on o i- off ang system sa labas ng itinakdang oras, pindutin ang 'Manual' button nang ilang ulit hanggang makita sa screen ang 'ON' o 'OFF'.",
+"sol": ["Nangongolekta ng enerhiyang galing sa araw. Ang kuryenteng galing po sa ating solar ay DC. Lingguhan  na inspeksyon at paglilinis: Linisan ang ibabaw ng solar panel gamit ang tubig para matanggal ang dumi. Gumamit ng sponge sa mahirap matanggal na dumi. Iwasang masira ang glass ng solar panel. Tingnan ang panel kung nag-iba ng kulay, may crack, natatanggal na bahagi, o may tumatagas na tubig. Tignan ang mga turnilyo kung matibay pa ang pagkakakabit sa panel."],
+"scc": "Nagkokontrol sa pag-charge ng baterya. Lingguhan na inspeksyon at paglilinis: Tignan kung may nakukuhang kuryente ang charge controller. Gumamit ng basahan upang linisan ang ibabaw ng charge controller.",
+"bat": "Nagtatago ng nakolektang charge. Hindi kailangang dagdagan ng tubig ang baterya. Araw-araw na inspeksyon at paglilinis: Kung kinakalawang ang mga terminal, tanggalin ang mga nakakabit dito at linisin gamit ang pinagsamang baking soda at mainit na tubig at lumang sipilyo. Upang maiwasan, lagyan ng grasa, WD-40 o petroleum jelly. Linisin ang baterya gamit ang tuyong basahan. Panatilihing mas mataas sa 12V ang charge ng battery. I-charge ang battery kung mas mababa sa 12V.",
+"cab": "Tignan ang mga kable kung may nasira, nabalatan o malapit nang mabali.Tignan kung may mga maluwag na koneksyon. Higpitan. Tingnan ang mga electric tape kung maayos pa rin ang pagkakakabit. Tingnan ang mga koneksyon sa mga panlabas na kagamitan kung napinsala ng tubig. Tignan ang mga drip loops sa mga kable sa tower. Siguraduhing maayos pa at di pa nababatak.",
+"prob ant": "Ang posisyon ng antenna ay nabago. I-check ang posisyon ng antenna kung ito ay nakatayo ng tuwid. I-text ang a1 kung tuwid at a0 kung hindi.", 
+"a1": "I-check ang signal ng cellphone sa nawalan ng signal. I-text ang a00 kung wala pa rin at a11 kung mayroon na.",
+"a0": "Patayin ang BTS at inverter kung nabuhay. Ayusin ang pagkakakabit at ibalik sa tamang pwesto. Buhayin ang BTS at inverter. I-text ang a1 kung naiayos na.",
+"a00": "I-report agad sa Level 2 at Level 3.",
+"a11": "Naisaayos mo na ang problemang ito. Salamat.",
+"prob bat": "Ang boltahe ng baterya ay mababa na. I-check kung mababa ito sa Charge Ctrlr (scc sa 777) o sa tester. I-text ang b0 kung mababa sa 9V at b1 kung hindi.",
+"b0": "I-check ang konesyon ng baterya sa Charge Controller at Solar Panels kung maayos. I-text ang b00 kung maayos at b11 kung may hindi.",
+"b1": "I-report agad sa Level 3 at sa 333.",
+"b00": "I-check kung naaarawan ang Solar Panel. Maaraw at wala bang nakakaharang dito? I-text ang b000 kung oo at b111 kung hindi.", 
+"b11":"Ayusin ang koneksyon o tumawag ng tulong mula sa Level 2 at 3. I-text ang b000 kung naayos na.",
+"b000": "I-off lang muna ang system hanggang umabot ang boltahe ng baterya hanggang 11V.",
+"b111": "Siguraduhing walang nakaharang sa Solar Panel o maghintay na umaraw. I-text ang b000 kung naayos na.",
+"prob comp":
+"Umiinit masyado ang computer. I-kumpirma kung mainit ang computer. I-text ang c1 kung mainit at c0 kung hindi.",
+"c1":
+"Kung mainit, i-OFF ang inverter. Palamigin ang computer. Kapag malamig na, i-ON muli ang inverter. I-text ang c11 kung naulit ang problema at c00 kung hindi.",
+"c0":
+"I-report agad sa 333.",
+"c11":
+"I-report agad sa 333. Siguraduhing nahahanginan ang computer, buksan ang pinto o maglagay ng electric fan pansamantala.",
+"c00":
+"Naisaayos mo na ang problemang ito. Salamat.",
+"prob vsat":
+"Hindi makatawag sa labas ng sitio. I-check kung hindi makatawag sa labas ng sitio. I-text ang v1 kung hindi makatawag sa labas ng sitio at v0 kung nakatatawag.", 
+"v1":
+"Kung naka-OFF, i-ON ang modem sa pamamagitan ng pagtanggal-kabit ng kable sa saksakan. I-text ang v0 kung ang modem ay hindi nag-ON at v10 kung nag-ON.",
+"v0":
+"I-report agad sa 333.",
+"V10":
+"Kumpirmahin ulit kung makakatawag sa labas ng sitio. I-text ang v00 kung nakakatawag na at v11 kung hindi pa.",
+"v11":
+"Tignan ang lagay ng panahon. Kung maulap, hintaying umaraw. Maaaring humina ang signal kung maulap. I-text ang v12 kung naulit ang problema at v00 kung hindi.",
+"v12":
+"I-check kung naka-ON ang maliliit na ilaw sa modem. Kung hindi naka-ilaw, baka may problema mula sa provider, maghintay lang. Kung naka-ilaw, maghintay sa loob ng isang araw at subukan muling tumawag. I-text ang v13 kung naulit ang problema at v00 kung hindi.",
+"v13":
+"Tingnan kung maluwag ang ethernet cable na kumukonekta sa modem at router. Ayusin ang mga kable. I-text ang v14 kung naulit ang problema at v00 kung hindi.",
+"v14":
+"Tingnan kung may mapansing sira sa ethernet cables. Kung wala, i-check ito gamit ang cable tester. Kung sira ang kable, i-report sa 333.",
+"v00":
+"Naisaayos mo na ang problemang ito. Salamat."
+}
