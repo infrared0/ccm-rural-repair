@@ -1,0 +1,13 @@
+<!--
+ Insert header text
+
+ User will need to dial to 990 to access this dialplan.
+ FS will then connect to the lua script stored in /usr/share/freeswitch/scripts.
+ Once the call terminates, the FS xml_cdr handler will create the CDR entry for this.
+--> 
+
+<extension name="sample_ivr">
+    <condition field="destination_number" expression="^990$">
+      <action application="lua" data="sample_ivr_record_listen.lua"/> 
+    </condition>
+</extension>
