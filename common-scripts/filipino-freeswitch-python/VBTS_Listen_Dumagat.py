@@ -8,6 +8,7 @@
 from freeswitch import consoleLog
 import os.path
 import callback
+import sys
 
 # shortcode for recording is 998, listening is 999
 LISTEN = "999"
@@ -32,8 +33,10 @@ def chat(message, args):
     fn = recording_lookup(code) 
     #send the filename to play back
     callback.python_callback(LISTEN, recipient, fn)
-    consoleLog('info', "Recording lookup: " fn + "\n")
-    message.chat_execute('set', 'play_fn=%s' % fn)
+    print fn
+    #TODO uncomment this
+    #consoleLog('info', "Recording lookup: " fn + "\n")
+    #message.chat_execute('set', 'play_fn=%s' % fn)
 
 def fsapi(session, stream, env, args):
     recipient = args[0]
@@ -51,3 +54,9 @@ def handler(session, args):
     res = recording_lookup(code) 
     session.execute("set", "_localstr=%s" % res)
     
+
+##################
+if __name__=="__main__":
+    #arguments: recipient, code
+    args = (sys.argv[1],sys.argv[2])
+    chat("Null", args)

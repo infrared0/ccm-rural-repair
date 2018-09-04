@@ -8,8 +8,11 @@ of patent rights can be found in the PATENTS file in the same directory.
 -->
 
 <extension name="listen">
-  <condition field="${destination_number}" expression="^998$">
-    <action application="playback" data='${play_fn}'/>
+    <condition field="${destination_number}" expression="^999$"/>
+    <condition field='${play_fn}' expression="^(?!\s*$).+">
+    <action application="set" data="effective_caller_id_number=999"/>
+    <action application="bridge" data="sofia/internal/${vbts_callerid}@127.0.0.1"/>
     <action application="system" data='curl --data "from_number=${vbts_callerid}&from_name=${from_imsi}&service_type=${service_type}&destination=${vbts_tp_dest_address}" http://127.0.0.1/smscdr'/>
   </condition>
 </extension>
+

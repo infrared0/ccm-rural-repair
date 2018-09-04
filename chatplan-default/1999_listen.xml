@@ -7,7 +7,7 @@ LICENSE file in the root directory of this source tree. An additional grant
 of patent rights can be found in the PATENTS file in the same directory.
 -->
 
-<extension name="listen" continue="true">
+<extension name="listen">
   <condition field="${vbts_tp_dest_address}" expression="^999$">
     <action inline="true" application="set" data="keyword=${regex(${vbts_text}|\S*|%1)}"/>
     <action inline="true" application="python" data="VBTS_Listen_Dumagat ${vbts_callerid}|${keyword}"/>
