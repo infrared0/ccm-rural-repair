@@ -1,12 +1,11 @@
 <configuration name="ivr.conf" description="IVR menus">
   <menus>
-    <!-- demo IVR setup -->
     <!-- demo IVR, Main Menu -->
     <menu name="record_ivr"
-	  greet-long="menu_sounds/welcome.wav"
-	  greet-short="menu_sounds/again.wav"
-          invalid-sound="menu_sounds/invalid.wav"
-          exit-sound="menu_sounds/thankyou.wav"
+	  greet-long="/home/endaga/menu_sounds/main.wav"
+	  greet-short="/home/endaga/menu_sounds/mainshort.wav"
+	  invalid-sound="/home/endaga/menu_sounds/maininvalid.wav"
+	  exit-sound="/home/endaga/menu_sounds/thankyou.wav"
           timeout ="10000"
       inter-digit-timeout="5000"
       max-failures="10"
@@ -17,29 +16,29 @@
     </menu>
     <!-- Record Sub Menu -->
     <menu name="record_submenu"
-	    greet-long="menu_sounds/record.wav"
-	    greet-short="menu_sounds/record_again.wav"
-	    invalid-sound="menu_sounds/invalid.wav"
-            exit-sound="menu_sounds/thankyou.wav"
+	    greet-long="/home/endaga/menu_sounds/record.wav"
+	    greet-short="/home/endaga/menu_sounds/recordshort.wav"
+	    invalid-sound="/home/endaga/menu_sounds/recordinvalid.wav"
+	    exit-sound="/home/endaga/menu_sounds/thankyou.wav"
             timeout="15000"
 	inter-digit-timeout="5000"
 	max-failures="10"
-	digit-len="10">
+	digit-len="1">
       <!-- This should start the recording -->
-      <entry action="menu-exec-app" digits="*" param="record something something TODO"/>
+      <entry action="menu-exec-app" digits="*" param="transfer 991 XML default"/>
      </menu>
     <!-- Listen Sub Menu -->
     <menu name="listen_submenu"
 	    greet-long="menu_sounds/listen.wav"
-	    greet-short="menu_sounds/listen_again.wav"
-	    invalid-sound="menu_sounds/invalid.wav"
+	    greet-short="menu_sounds/listenshort.wav"
+	    invalid-sound="menu_sounds/listeninvalid.wav"
             exit-sound="menu_sounds/thankyou.wav"
             timeout="15000"
 	inter-digit-timeout="5000"
 	max-failures="10"
 	digit-len="10">
-      <!-- This should start the recording -->
-      <entry action="menu-exec-app" digits="*" param="playback something something TODO"/>
+      <!-- This should start the playback -->
+      <entry action="menu-play-sound" digits="*" param="/home/endaga/recorded/$1.wav"/>
      </menu>
   </menus>
 </configuration>

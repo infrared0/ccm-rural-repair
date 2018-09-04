@@ -7,11 +7,9 @@ LICENSE file in the root directory of this source tree. An additional grant
 of patent rights can be found in the PATENTS file in the same directory.
 -->
 
-<extension name="listen">
-    <condition field="${destination_number}" expression="^999$"/>
-    <condition field='${play_fn}' expression="^(?!\s*$).+">
-    <action application="set" data="effective_caller_id_number=999"/>
-    <action application="bridge" data="sofia/internal/${vbts_callerid}@127.0.0.1"/>
+<extension name="listen_record">
+    <condition field="${destination_number}" expression="^990$"/>
+    <action application="ivr" data="record_ivr"/>
     <action application="system" data='curl --data "from_number=${vbts_callerid}&from_name=${from_imsi}&service_type=${service_type}&destination=${vbts_tp_dest_address}" http://127.0.0.1/smscdr'/>
   </condition>
 </extension>

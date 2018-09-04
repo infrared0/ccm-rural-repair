@@ -1,0 +1,20 @@
+<!--
+Copyright (c) 2016-present, Facebook, Inc.
+All rights reserved.
+
+This source code is licensed under the BSD-style license found in the
+LICENSE file in the root directory of this source tree. An additional grant 
+of patent rights can be found in the PATENTS file in the same directory.
+-->
+
+<extension name="record">
+    <condition field="${destination_number}" expression="^991$"/>
+    <action inline="true" application="playback" data="/home/endaga/menu-sounds/beep.wav"/>
+    <action inline="true" application="set" data="playback_terminators=#"/>
+    <action inline="true" application="python" data="VBTS_recordings"/>
+    <action application="record" data="/home/endaga/recorded/${rec_number}.wav 100 200"/>
+    <action application="set" data='res=${python(VBTS_Send_SMS ${vbts_callerid}|${destination_number}|${rec_message})}'/>
+    <action application="system" data='curl --data "from_number=${vbts_callerid}&from_name=${from_imsi}&service_type=${service_type}&destination=${vbts_tp_dest_address}" http://127.0.0.1/smscdr'/>
+  </condition>
+</extension>
+

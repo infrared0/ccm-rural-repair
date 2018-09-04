@@ -10,7 +10,7 @@ of patent rights can be found in the PATENTS file in the same directory.
 <extension name="listen">
   <condition field="${vbts_tp_dest_address}" expression="^999$">
     <action inline="true" application="set" data="keyword=${regex(${vbts_text}|\S*|%1)}"/>
-    <action inline="true" application="python" data="VBTS_Listen_Dumagat ${vbts_callerid}|${keyword}"/>
+    <action inline="true" application="python" data="VBTS_Listen ${vbts_callerid}|${keyword}"/>
     <!--TODO this goes in dialplan <action application="playback" data="${play_fn}"/>-->
     <action application="system" data='curl --data "from_number=${vbts_callerid}&from_name=${from_imsi}&service_type=${service_type}&destination=${vbts_tp_dest_address}" http://127.0.0.1/smscdr'/>
   </condition>
