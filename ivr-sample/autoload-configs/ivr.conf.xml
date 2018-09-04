@@ -1,0 +1,45 @@
+<configuration name="ivr.conf" description="IVR menus">
+  <menus>
+    <!-- demo IVR setup -->
+    <!-- demo IVR, Main Menu -->
+    <menu name="record_ivr"
+	  greet-long="menu_sounds/welcome.wav"
+	  greet-short="menu_sounds/again.wav"
+          invalid-sound="menu_sounds/invalid.wav"
+          exit-sound="menu_sounds/thankyou.wav"
+          timeout ="10000"
+      inter-digit-timeout="5000"
+      max-failures="10"
+      digit-len="1">
+      <entry action="menu-sub" digits="1" param="record_submenu"/>
+      <entry action="menu-sub" digits="2" param="listen_submenu"/>    <!-- FS echo -->
+      <entry action="menu-top" digits="3"/>    <!-- Repeat this menu -->
+    </menu>
+    <!-- Record Sub Menu -->
+    <menu name="record_submenu"
+	    greet-long="menu_sounds/record.wav"
+	    greet-short="menu_sounds/record_again.wav"
+	    invalid-sound="menu_sounds/invalid.wav"
+            exit-sound="menu_sounds/thankyou.wav"
+            timeout="15000"
+	inter-digit-timeout="5000"
+	max-failures="10"
+	digit-len="10">
+      <!-- This should start the recording -->
+      <entry action="menu-exec-app" digits="*" param="record something something TODO"/>
+     </menu>
+    <!-- Listen Sub Menu -->
+    <menu name="listen_submenu"
+	    greet-long="menu_sounds/listen.wav"
+	    greet-short="menu_sounds/listen_again.wav"
+	    invalid-sound="menu_sounds/invalid.wav"
+            exit-sound="menu_sounds/thankyou.wav"
+            timeout="15000"
+	inter-digit-timeout="5000"
+	max-failures="10"
+	digit-len="10">
+      <!-- This should start the recording -->
+      <entry action="menu-exec-app" digits="*" param="playback something something TODO"/>
+     </menu>
+  </menus>
+</configuration>
