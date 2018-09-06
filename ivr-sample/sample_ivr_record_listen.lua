@@ -11,10 +11,17 @@ while (session:ready() == true) do
 
         -- get digit to be used as filename
         my_number = session:getDigits(1, "", 3000);
-        while (my_number == "" or my_number == "#" or my_number == "*") do
+        count = 0;
+        while (count ~= 3 and (my_number == "" or my_number == "#" or my_number == "*")) do
+            session:execute("playback", sounddir .. "recordinvalid.wav");
             session:sleep(100);
+            count = count + 1;
             my_number = session:getDigits(1, "", 3000);
         end   
+        if (count == 3) then
+            session:execute("playback", sounddir .. "thankyou.wav");
+            session:hangup();
+        end 
         session:execute("playback", sounddir .. "beep.wav");
         session:sleep(100);
 	
@@ -40,10 +47,17 @@ while (session:ready() == true) do
 
         -- get recording number
         my_number = session:getDigits(1, "", 3000);
-        while (my_number == "") do
-            session:sleep(3000);
+        count = 0;
+        while (count ~= 3 and my_number == "") do
+            session:execute("playback", sounddir .. "listeninvalid.wav");
+            session:sleep(100);
+            count = count + 1;
             my_number = session:getDigits(1, "", 3000);
         end   
+        if (count == 3) then
+            session:execute("playback", sounddir .. "thankyou.wav");
+            session:hangup();
+        end 
         filename = recorddir .. my_number .. ".wav"
 
         session:execute("playback",filename);
